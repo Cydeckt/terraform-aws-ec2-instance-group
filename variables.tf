@@ -65,6 +65,7 @@ variable "subnet" {
 variable "region" {
   type        = string
   description = "AWS Region the instance is launched in"
+  default     = "eu-central-1"
 }
 
 variable "availability_zone" {
@@ -76,11 +77,13 @@ variable "availability_zone" {
 variable "ami" {
   type        = string
   description = "The AMI to use for the instance"
+  default = "ami-0a6dc7529cd559185"
 }
 
 variable "ami_owner" {
   type        = string
   description = "Owner of the given AMI"
+  default = "648730480972"
 }
 
 variable "ebs_optimized" {
