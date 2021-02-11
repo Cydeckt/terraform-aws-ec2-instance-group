@@ -1,7 +1,7 @@
 variable "ssh_key_pair" {
   type        = string
   description = "SSH key pair to be provisioned on the instance"
-  default     = ""
+  default     = "terraform"
 }
 
 variable "generate_ssh_key_pair" {
@@ -19,13 +19,13 @@ variable "associate_public_ip_address" {
 variable "ssh_key_pair_path" {
   type        = string
   description = "Path to where the generated key pairs will be created. Defaults to $$${path.cwd}"
-  default     = ""
+  default     = "~/Downloads/terraform.pem"
 }
 
 variable "assign_eip_address" {
   type        = bool
   description = "Assign an Elastic IP address to the instance"
-  default     = true
+  default     = false
 }
 
 variable "user_data" {
@@ -254,7 +254,7 @@ variable "additional_ips_count" {
 variable "instance_count" {
   type        = number
   description = "Count of ec2 instances to create"
-  default     = 1
+  default     = 3
 }
 
 variable "permissions_boundary_arn" {

@@ -58,7 +58,7 @@ data "aws_ami" "info" {
 }
 
 module "label" {
-  source  = "cloudposse/label/null"
+  source  = "cydeckt/label/null"
   version = "0.24.1"
   tags    = { AZ = local.availability_zone }
 
@@ -128,20 +128,6 @@ resource "aws_instance" "default" {
       instance_index = count.index
     }
   )
-}
-
-##
-## Create keypair if one isn't provided
-##
-
-module "ssh_key_pair" {
-  source                = "cloudposse/key-pair/aws"
-  version               = "0.18.0"
-  ssh_public_key_path   = local.ssh_key_pair_path
-  private_key_extension = ".pem"
-  generate_ssh_key      = var.generate_ssh_key_pair
-
-  context = module.this.context
 }
 
 resource "aws_eip" "default" {
