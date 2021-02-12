@@ -77,13 +77,13 @@ variable "availability_zone" {
 variable "ami" {
   type        = string
   description = "The AMI to use for the instance"
-  default = "ami-0a6dc7529cd559185"
+  default     = "ami-0932440befd74cdba"
 }
 
 variable "ami_owner" {
   type        = string
   description = "Owner of the given AMI"
-  default = "648730480972"
+  default     = "648730480972"
 }
 
 variable "ebs_optimized" {

@@ -58,7 +58,7 @@ data "aws_ami" "info" {
 }
 
 module "label" {
-  source  = "cydeckt/label/null"
+  source  = "../label/null-label"
   version = "0.24.1"
   tags    = { AZ = local.availability_zone }
 
